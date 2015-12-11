@@ -1,6 +1,7 @@
 FROM ldejager/consul:latest
+ENV VERSION 0.6.0
 ADD ./config /opt/consul/config/
-ADD https://releases.hashicorp.com/consul/0.6.0/consul_0.6.0_web_ui.zip /tmp/webui.zip
+ADD https://releases.hashicorp.com/consul/${VERSION}/consul_${VERSION}_web_ui.zip /tmp/webui.zip
 RUN cd /tmp \
  && unzip webui.zip -d /opt/consul/ui \
  && rm /tmp/webui.zip
