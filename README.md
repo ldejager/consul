@@ -1,2 +1,5 @@
 # docker-consul
-Docker Consul
+
+VERSION 0.6.0
+
+Consul docker container.
