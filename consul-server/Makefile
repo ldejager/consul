@@ -10,7 +10,7 @@ endif
 
 .PHONY: all build tag tag/$(VERSION) push push/$(VERSION) clean
 
-all: all build tag tag/$(VERSION) push push/$(VERSION)
+all: build tag tag/$(VERSION) push push/$(VERSION)
 
 build:
 	@docker build $(BUILD_OPTS) -t $(IMAGE) $(ROOTDIR)
