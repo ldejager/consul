@@ -8,9 +8,9 @@ ifdef NOCACHE
 	BUILD_OPTS	:= $(BUILD_OPTS) --no-cache
 endif
 
-.PHONY: all build clean tag tag/$(VERSION) push push/$(VERSION)
+.PHONY: all build tag tag/$(VERSION) push push/$(VERSION) clean
 
-all: all build tag tag/$(VERSION) push push/$(VERSION) clean
+all: all build tag tag/$(VERSION) push push/$(VERSION)
 
 build:
 	@docker build $(BUILD_OPTS) -t $(IMAGE) $(ROOTDIR)
