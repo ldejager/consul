@@ -1,6 +1,6 @@
 IMAGE       := ldejager/consul-standalone
 REPOSITORY  := docker.io/$(IMAGE)
-VERSION     := 0.6.0
+VERSION     := 0.6.4
 ROOTDIR     := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 BUILD_OPTS  :=
 
