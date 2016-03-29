@@ -2,8 +2,6 @@ FROM ldejager/consul:latest
 
 ENV VERSION 0.6.4
 
-ADD ./config /opt/consul/config/
-
 EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 8600 8600/udp
 
 ENV DNS_RESOLVES consul
