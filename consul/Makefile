@@ -18,11 +18,11 @@ build:
 
 tag/$(VERSION):
 	@echo "==> Tagging docker image $(IMAGE) with version $(VERSION)"
-	@docker tag -f $(IMAGE):latest $(REPOSITORY):$(VERSION)
+	@docker tag $(IMAGE):latest $(REPOSITORY):$(VERSION)
 
 tag: tag/$(VERSION)
 	@echo "==> Tagging docker image $(IMAGE) with version $(VERSION)"
-	@docker tag -f $(REPOSITORY):$(VERSION) $(REPOSITORY):latest
+	@docker tag $(REPOSITORY):$(VERSION) $(REPOSITORY):latest
 
 push/$(VERSION): tag
 	@echo "==> Pushing docker image $(IMAGE) version $(VERSION)"
