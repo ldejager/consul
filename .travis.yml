@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - make
+  - docker run -d --name consul-standalone ldejager/consul-standalone
+
+script:
+  - docker ps | grep -q consul-standalone

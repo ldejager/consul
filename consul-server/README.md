@@ -1,3 +1,3 @@
 # consul-server
 
-[![](https://badge.imagelayers.io/ldejager/consul-server:latest.svg)](https://imagelayers.io/?images=ldejager/consul-server:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/ldejager/consul-server.svg)](http://microbadger.com/images/ldejager/consul-server "Get your own image badge on microbadger.com")
