@@ -10,16 +10,16 @@ endif
 
 .PHONY: all build tag tag/$(VERSION) push push/$(VERSION) clean
 
-all: build tag tag/$(VERSION) push push/$(VERSION)
+all: build tag tag/$(VERSION)
 
 build:
 	@docker build $(BUILD_OPTS) -t $(IMAGE) $(ROOTDIR)
 
 tag/$(VERSION):
-	@docker tag -f $(IMAGE):latest $(REPOSITORY):$(VERSION)
+	@docker tag $(IMAGE):latest $(REPOSITORY):$(VERSION)
 
 tag: tag/$(VERSION)
-	@docker tag -f $(REPOSITORY):$(VERSION) $(REPOSITORY):latest
+	@docker tag $(REPOSITORY):$(VERSION) $(REPOSITORY):latest
 
 push/$(VERSION): tag
 	@docker push $(REPOSITORY):$(VERSION)
@@ -35,4 +35,3 @@ setversion:
 
 clean:
 	@docker rmi -f $(IMAGE)
-

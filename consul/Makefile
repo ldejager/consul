@@ -10,7 +10,7 @@ endif
 
 .PHONY: all build tag tag/$(VERSION) push push/$(VERSION) clean
 
-all: build tag tag/$(VERSION) push push/$(VERSION)
+all: build tag tag/$(VERSION)
 
 build:
 	@echo "==> Building docker image: $(IMAGE)"
