@@ -5,8 +5,9 @@ services:
 
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - make
-  - docker run -d --name consul-standalone ldejager/consul-standalone
+  - make build
+  - docker run -d --name consul-standalone rwxlabs/consul-standalone
 
 script:
   - docker ps | grep -q consul-standalone
+  - make push
