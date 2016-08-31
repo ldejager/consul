@@ -14,7 +14,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/rwxlabs/consul"
 
 ADD ./config /opt/consul/config/
-ADD https://releases.hashicorp.com/consul/${VERSION}/consul_${VERSION}_web_ui.zip /tmp/webui.zip
+ADD https://releases.hashicorp.com/consul/${CODE_VERSION}/consul_${CODE_VERSION}_web_ui.zip /tmp/webui.zip
 
 RUN cd /tmp \
  && unzip webui.zip -d /opt/consul/ui \
