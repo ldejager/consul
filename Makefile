@@ -1,5 +1,13 @@
+all: build
+
 build:
-	make -C consul
-	make -C consul-agent
-	make -C consul-server
-	make -C consul-standalone
+	make build -C consul
+	make build -C consul-agent
+	make build -C consul-server
+	make build -C consul-standalone
+
+push:
+	make push -C consul
+	make push -C consul-agent
+	make push -C consul-server
+	make push -C consul-standalone

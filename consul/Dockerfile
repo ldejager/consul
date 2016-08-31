@@ -1,9 +1,19 @@
-FROM ldejager/alpine-glibc
+FROM rwxlabs/alpine-glibc
 
 ENV PATH /opt/consul/bin:/opt/kubectl/bin:$PATH
-ENV VERSION 0.6.4
 
-ADD https://releases.hashicorp.com/consul/${VERSION}/consul_${VERSION}_linux_amd64.zip /tmp/consul.zip
+ARG BUILD_DATE
+ARG VCS_REF
+ARG CODE_VERSION
+
+ENV CODE_VERSION 0.6.4
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.version=$CODE_VERSION \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/rwxlabs/consul"
+
+ADD https://releases.hashicorp.com/consul/${CODE_VERSION}/consul_${CODE_VERSION}_linux_amd64.zip /tmp/consul.zip
 
 RUN apk --update add curl ca-certificates \
  && apk add bash \
