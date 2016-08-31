@@ -11,4 +11,7 @@ before_install:
 script:
   - docker ps | grep -q consul-standalone
   - make push
-  - curl -X POST -d {} https://hooks.microbadger.com/images/rwxlabs/consul/jF5ancAvSFK_C1Jnpnrs4GRlD-E=
+  - curl -X POST -d {} https://hooks.microbadger.com/images/rwxlabs/consul/jF5ancAvSFK_C1Jnpnrs4GRlD-E= # consul
+  - curl -X POST -d {} https://hooks.microbadger.com/images/rwxlabs/consul-agent/1dCKtDTMeC-V50mOockQ1du5SVk= # consul-agent
+  - curl -X POST -d {} https://hooks.microbadger.com/images/rwxlabs/consul-server/P_YNo8zQDLjrtjxGY5nLF33zc0U= # consul-server
+  - curl -X POST -d {} https://hooks.microbadger.com/images/rwxlabs/consul-standalone/w2souYsmOIe0QR4--L8CzkgTrKc= # consul-standalone
