@@ -1,5 +1,7 @@
 FROM rwxlabs/alpine-glibc
 
+MAINTAINER Leon de Jager <ldejager@rwxlabs.io>
+
 ENV PATH /opt/consul/bin:/opt/kubectl/bin:$PATH
 
 ARG BUILD_DATE
