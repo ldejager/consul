@@ -6,8 +6,6 @@ services:
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - make build
-  - docker ps -a
-  - docker images -a
   - docker run -d --name consul-standalone rwxlabs/consul-standalone
 
 script:
